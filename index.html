@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Генератор открыток</title>
+  <!--link rel="stylesheet" href="styles.css"-->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    #canvasWrapper {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #textArea{
+       
+      width: 150px;
+      height: 100px;
+
+
+    }
+
+    #controlsWrapper {
+      width: 250px;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+
+    #controlsWrapper label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    #controlsWrapper input[type="range"],
+    #controlsWrapper input[type="color"],
+    #controlsWrapper select {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    #cardCanvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  
+  <div id="canvasWrapper">
+    <canvas id="cardCanvas" width="400" height="300"></canvas>
+  </div>
+  
+  <div id="controlsWrapper">
+    <header>
+      <h3>Генератор открытки Wevielo</h3>
+      <p>by berlandbor</p>
+    </header>
+    <label for="textArea">Текст: </label>
+    <textarea id="textArea" placeholder="Введите текст"></textarea>
+    <label for="fontSelect">Шрифт: </label>
+    <select id="fontSelect">
+      <option value="Arial">Arial</option>
+      <option value="Georgia">Georgia</option>
+      <option value="Times New Roman">Times New Roman</option>
+    </select>
+    <label for="fontSizeRange">Размер шрифта: </label>
+    <input type="range" id="fontSizeRange" min="12" max="100" value="24">
+    <label for="fontColorInput">Цвет шрифта: </label>
+    <input type="color" id="fontColorInput" value="#000000">
+    <label for="backgroundColorInput">Цвет фона: </label>
+    <input type="color" id="backgroundColorInput" value="#cce5ff">
+    <label for="backgroundImageInput">Картинка в фон: </label>
+    <input type="url" id="backgroundImageInput" placeholder="URL картинки">
+    <label for="xCoordRange">X-координата: </label>
+    <input type="range" id="xCoordRange" min="0" max="400" value="50">
+    <label for="yCoordRange">Y-координата: </label>
+    <input type="range" id="yCoordRange" min="0" max="300" value="50">
+    <label for="canvasSizeRange">Размер канваса: </label>
+    <input type="range" id="canvasSizeRange" min="100" max="800" value="400">
+  
+    <button onclick="capture()">
+      &#128190;&#9997;Создать открытку
+    </button>
+    <!--button id="generateButton">Создать открытку</button-->
+  </div>
+  <script src="html2canvas.min.js"></script>
+  <script src="scrinshot-script.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
